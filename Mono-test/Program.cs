@@ -14,7 +14,7 @@ namespace Mono_test
             }
             catch (InvalidCastException)
             {
-                Console.WriteLine("This only compiles with Mono 5.14+.");
+                Console.WriteLine("This is only reachable with Mono 5.14+.");
                 return;
             }
 
