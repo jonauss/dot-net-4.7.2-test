@@ -6,10 +6,18 @@ namespace Mono_test
     {
         static void Main(string[] args)
         {
-            var comm = new System.Data.SqlClient.SqlCommand();
-            System.Data.SqlClient.SqlAuthenticationMethod auth;
-            var stringBuilder = new System.Data.SqlClient.SqlConnectionStringBuilder();
-            Console.WriteLine("This only compiles with Mono 5.14+.");
+            DayOfWeek enumValue = DayOfWeek.Monday;
+            object value = (int)enumValue;
+            try
+            {
+                var res = (DayOfWeek?)value; // Should throw
+                Environment.Exit(1);
+            }
+            catch (InvalidCastException)
+            {
+                Console.WriteLine("This only compiles with Mono 5.14+.");
+                Environment.Exit(0);
+            }
         }
     }
 }
