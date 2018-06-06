@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Cryptography;
 
 namespace Mono_test
 {
@@ -7,11 +6,10 @@ namespace Mono_test
     {
         static void Main(string[] args)
         {
-            using (DSA dsa = DSA.Create(2048))
-            {
-                Console.WriteLine("This is a .NET 4.7.2 Application!");
-                Console.WriteLine(dsa.GetHashCode());
-            }
+            var comm = new System.Data.SqlClient.SqlCommand();
+            System.Data.SqlClient.SqlAuthenticationMethod auth;
+            var stringBuilder = new System.Data.SqlClient.SqlConnectionStringBuilder();
+            Console.WriteLine("This only compiles with Mono 5.14+.");
         }
     }
 }
